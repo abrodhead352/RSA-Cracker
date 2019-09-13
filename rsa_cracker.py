@@ -10,12 +10,11 @@ import math
 
 # main loop for running program
 def main():
-    e = 7
-    n = 33
-    d = 3
-    P = 5
-    C = 14
-    runTest(1,e,n,P,d,C)
+    runTest(1,7,33,5,3,14)
+    runTest(2,3,55,9,27,14)
+    runTest(3,7,33,5,3,14) #do here VVVVVVVV
+    runTest(4,7,33,5,3,14)
+    runTest(5,7,33,5,3,14)
 
 #uses a public key 'e' to encrypt plaintext into ciphertext
 def rsa_encrypt(plaintext, e, n):
