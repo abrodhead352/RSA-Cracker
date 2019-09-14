@@ -2,7 +2,8 @@
 Author: Andrew Brodhead
 Class: Computer Security CPSC448-01
 Date: Sept 19, 2019
-Description:
+Description: breaks rsa_encryption for smaller products of primes by
+             factoring part of a public key to derive the private key
 Usage: python3 rsa_cracker.py
 
 """
