@@ -12,19 +12,19 @@ import math
 def main():
     runTest(1,7,33,5,3,14)
     runTest(2,3,55,9,27,14)
-    runTest(3,7,33,5,3,14) #do here VVVVVVVV
-    runTest(4,7,33,5,3,14)
-    runTest(5,7,33,5,3,14)
+    runTest(3,17,77,8,53,57)
+    runTest(4,11,143,7,11,106)
+    runTest(5,7,527,2,343,128)
 
 #uses a public key 'e' to encrypt plaintext into ciphertext
 def rsa_encrypt(plaintext, e, n):
     #C = P^e mod n
-    return (math.pow(plaintext, e))%n
+    return (plaintext ** e)%n
 
 #uses a private key 'd' to decrypt ciphertext into plaintext
 def rsa_decrypt(ciphertext, d, n):
     #P = C^d mod n
-    return (math.pow(ciphertext, d))%n
+    return (ciphertext ** d)%n
 
 #cracks the rsa encryption and returns private key d
 def crack_rsa(e, n):
@@ -55,6 +55,9 @@ def runTest(testNum, e, n, P, d, C):
     P_prime = rsa_decrypt(C_prime, d_prime, n)
 
     print("**************** Test case " + str(testNum) + " ****************")
+    print("d (expected - actual):         ",d,d_prime)
+    print("ciphertext (expected - actual):", C, C_prime)
+    print("plaintext (expected - actual): ", P, P_prime,"\n")
 
 
 #returns a tuple of prime factors of a number n
